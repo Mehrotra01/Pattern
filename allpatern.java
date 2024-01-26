@@ -74,6 +74,21 @@ public class allpatern {
                     int n12 = sc.nextInt();
                     pattern12(n12);
                     break;
+                case 13:
+                    System.out.print("Enter the value of N: ");
+                    int n13 = sc.nextInt();
+                    pattern13(n13);
+                    break;
+                case 14:
+                    System.out.print("Enter the value of N: ");
+                    int n14 = sc.nextInt();
+                    pattern14(n14);
+                    break;
+                case 15:
+                    System.out.print("Enter the value of N: ");
+                    int n15 = sc.nextInt();
+                    pattern15(n15);
+                    break;
 
                 default:
                     System.out.println("\tEnter a number in the range\n");
@@ -94,7 +109,7 @@ public class allpatern {
 
     private static void pattern2(int n) {
         for (int row = 1; row <= n; row++) {
-            for (int j = 1; j <= n; j++) {
+            for (int j = 1; j <= row; j++) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -102,12 +117,19 @@ public class allpatern {
     }
 
     private static void pattern3(int n) {
-        for (int row = 1; row <= n; row++) {
-            for (int j = row; j <= n; j++) { // instead of using j= row we can also use j<=(n+1)-row
+        // for (int row = 1; row <= n; row++) {
+        // for (int j = row; j <= n; j++) { // instead of using j= row we can also use
+        // j<=(n+1)-row
+        // System.out.print("* ");
+        // }
+        // System.out.println();
+        // // System.out.println("value of i "+row);
+        // }
+        for (int row = n; row >= 1; row--) {
+            for (int j = 1; j <= row; j++) {
                 System.out.print("* ");
             }
             System.out.println();
-            // System.out.println("value of i "+row);
         }
     }
 
@@ -129,6 +151,7 @@ public class allpatern {
             }
             System.out.println();
         }
+
     }
 
     private static void pattern6(int n) {
@@ -145,12 +168,22 @@ public class allpatern {
     }
 
     private static void pattern7(int n) {
-        for (int row = 0; row < n; row++) {
+        // for (int row = 0; row < n; row++) {
 
-            for (int j = 0; j < row; j++) {
+        // for (int j = 0; j < row; j++) {
+        // System.out.print(" ");
+        // }
+        // for (int z = n - row - 1; z >= 0; z--) {
+        // System.out.print("*");
+        // }
+        // System.out.println();
+        // }
+        for (int row = n; row >= 1; row--) {
+
+            for (int z = n - row; z > 0; z--) {
                 System.out.print(" ");
             }
-            for (int z = n - row - 1; z >= 0; z--) {
+            for (int j = 0; j < row; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -174,17 +207,27 @@ public class allpatern {
     }
 
     private static void pattern9(int n) {
-        for (int row = 1; row <= n; row++) {
+        // for (int row = 1; row <= n; row++) {
 
-            for (int j = 0; j < row - 1; j++) {
+        // for (int j = 0; j < row - 1; j++) {
+        // System.out.print(" ");
+        // }
+        // for (int z = 2 * n; z >= 2 * row; z--) {
+        // System.out.print("*");
+        // }
+        // // for (int j = 0; j < row - 1; j++) {
+        // // System.out.print(" ");
+        // // }
+        // System.out.println();
+        // }
+        for (int row = n; row >= 1; row--) {
+
+            for (int z = n - row; z > 0; z--) {
                 System.out.print(" ");
             }
-            for (int z = 2 * n; z >= 2 * row; z--) {
+            for (int j = 0; j < row * 2 - 1; j++) {
                 System.out.print("*");
             }
-            // for (int j = 0; j < row - 1; j++) {
-            // System.out.print(" ");
-            // }
             System.out.println();
         }
     }
@@ -203,12 +246,22 @@ public class allpatern {
     }
 
     private static void pattern11(int n) {
-        for (int row = 1; row <= n; row++) {
+        // for (int row = 1; row <= n; row++) {
 
-            for (int z = 0; z < row - 1; z++) {
+        // for (int z = 0; z < row - 1; z++) {
+        // System.out.print(" ");
+        // }
+        // for (int j = n - row; j >= 0; j--) {
+        // System.out.print("* ");
+        // }
+        // System.out.println();
+        // }
+        for (int row = n; row >= 1; row--) {
+
+            for (int j = 0; j < n - row; j++) {
                 System.out.print(" ");
             }
-            for (int j = n - row; j >= 0; j--) {
+            for (int z = 0; z < row; z++) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -228,4 +281,71 @@ public class allpatern {
             System.out.println();
         }
     }
+
+    private static void pattern13(int n) {
+        for (int row = 0; row < n; row++) {
+            for (int j = n - row - 1; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j < 2 * n; j++) {
+                if (row == n - 1 || j == 1 || j == 2 * row + 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    private static void pattern14(int n) {
+        for (int row = 0; row < n; row++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j < 2 * n; j++) {
+                // System.out.println(2*n-2*row-1);
+                if (row == 0 || j == 1 || j == 2 * n - 2 * row - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        // for (int row = n; row >= 1; row--) {
+        // for (int j = n - row - 1; j > 0; j--) {
+        // System.out.print(" ");
+        // }
+        // for (int j = 0; j < 2 * n; j++) {
+        // if (row == n || j == 1 || j == 2 * row - 1) {
+        // System.out.print("*");
+        // } else {
+        // System.out.print(" ");
+        // }
+        // }
+        // System.out.println();
+        // }
+    }
+
+    private static void pattern15(int n) {
+        // for (int row = 0; row < 2 * n; row++) {
+        //     // int starInRight=0;
+        //     int starInRight = row >= n ? (2 * row - 2* n - 1) : (2 * row + 1);
+        //     // (2 * n - 2 * row - 1)
+        //     int spaceInRow = row > n ? row : (2 * n) - (row);
+        //     for (int i = 0; i < spaceInRow; i++) {
+        //         System.out.print(" ");
+        //     }
+        //     for (int i = 1; i < 2 * n; i++) {
+        //         if (i == 1 || i == starInRight) {
+        //             System.out.print("*"+starInRight);
+        //         } else {
+        //             System.out.print(" ");
+        //         }
+        //     }
+        //     System.out.println();        //tried my best but cant find a realtionship for lower part of traingle
+        // }
+    }
+
 }

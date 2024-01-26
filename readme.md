@@ -270,4 +270,6 @@ Print these patterns using loops:
        12    21
        123  321
        12344321
+
+
 ```
