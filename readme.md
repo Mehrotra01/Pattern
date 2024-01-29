@@ -1,9 +1,6 @@
-Pattern Questions
-
-Print these patterns using loops:
+We have make a java program who print these pattern when you pass these numbers
 
 ```text
-
 1.  *****
     *****
     *****
@@ -270,6 +267,4 @@ Print these patterns using loops:
        12    21
        123  321
        12344321
-
-
 ```
